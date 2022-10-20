@@ -1,0 +1,89 @@
+:root {
+  --side-margin: 1%;
+  --cards-per-row: 3;
+}
+
+@mixin over-riding-effect {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card {
+  width: calc((100% / 3) - (2 * var(--cards-per-row) * var(--side-margin)));
+  height: 20rem;
+  margin: 1rem var(--side-margin);
+  cursor: pointer;
+  caret-color: transparent;
+
+  &__main-section {
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    position: relative;
+    transition: ease-in-out;
+    transition-duration: 0.2s;
+    border-radius: 5px;
+
+    &__available {
+      &:hover {
+        border: 2px solid rgb(209, 240, 134);
+      }
+    }
+
+    &__background {
+      @include over-riding-effect;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 5px;
+      z-index: var(--z-index-level-3);
+    }
+    &__effect-based {
+      &__non-available {
+        @include over-riding-effect;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 10;
+      }
+    }
+  }
+
+  &__non-available__text {
+    @include over-riding-effect;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 11;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-weight: 200;
+
+    &__upper {
+      font-size: 2rem;
+    }
+    &__lower {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__label {
+    padding: 0.25rem 3rem;
+    background-color: grey;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    color: white;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 3;
+    font-weight: 500;
+  }
+  &__lower-section {
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
+  }
+}

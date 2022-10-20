@@ -1,0 +1,123 @@
+.cards {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+  max-height: auto;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Quicksand", sans-serif;
+
+  &__internal-container {
+    width: 75%;
+    height: 75%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    // @media (max-width: 450px) {
+    //   width: 95%;
+    // }
+  }
+  &__exit {
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    &__icon {
+      margin-right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      background-image: url("../../assets/left-arrow.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+    &__btn {
+      font-size: 1.75rem;
+      font-weight: 200;
+      text-transform: uppercase;
+      border: none;
+      background-color: transparent;
+      color: white;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+  &__circles {
+    width: 100%;
+    height: 3rem;
+    // background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__item {
+      width: 3rem;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #28282b; // matte black
+      box-shadow: rgb(133, 132, 132) 6px 7px 5px -6px inset;
+    }
+  }
+  &__heading {
+    text-align: center;
+    align-items: center;
+    color: white;
+
+    &__top {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.2rem;
+      color: #567c00;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    &__center {
+      font-family: "Oswald", sans-serif;
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      text-transform: uppercase;
+      font-weight: 200;
+    }
+    &__bottom {
+      font-weight: 200;
+      font-size: 1.4rem;
+      filter: opacity(0.85);
+      letter-spacing: 0.5px;
+    }
+  }
+  &__info {
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    filter: opacity(0.6);
+  }
+  &__items-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__submit-btn {
+    background-color: #b3fe00;
+    color: rgb(187, 74, 0);
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1rem 4rem;
+    border: none;
+    clip-path: polygon(0% 0%, 100% 5%, 85% 100%, 2% 100%);
+    border: 2px solid rgb(142, 8, 8);
+    cursor: pointer;
+  }
+}
